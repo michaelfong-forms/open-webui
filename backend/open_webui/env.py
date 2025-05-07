@@ -31,6 +31,8 @@ try:
 except ImportError:
     print("dotenv not installed, skipping...")
 
+print(os.environ.get("CORS_ALLOW_ORIGIN", "*").split(";"))
+
 DOCKER = os.environ.get("DOCKER", "False").lower() == "true"
 
 # device type embedding models - "cpu" (default), "cuda" (nvidia gpu required) or "mps" (apple silicon) - choosing this right can lead to better performance

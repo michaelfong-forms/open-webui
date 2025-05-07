@@ -74,6 +74,9 @@ from open_webui.routers import (
     prompts,
     evaluations,
     tools,
+    datasets,
+    datasets_tasks,
+    datasets_evaluations,
     users,
     utils,
 )
@@ -960,6 +963,10 @@ app.include_router(models.router, prefix="/api/v1/models", tags=["models"])
 app.include_router(knowledge.router, prefix="/api/v1/knowledge", tags=["knowledge"])
 app.include_router(prompts.router, prefix="/api/v1/prompts", tags=["prompts"])
 app.include_router(tools.router, prefix="/api/v1/tools", tags=["tools"])
+
+app.include_router(datasets.router, prefix="/api/v1/datasets", tags=["datasets"])
+app.include_router(datasets_tasks.router, prefix="/api/v1/datasets-tasks", tags=["datasets-tasks"])
+app.include_router(datasets_evaluations.router, prefix="/api/v1/datasets-evaluations", tags=["datasets-evaluations"])
 
 app.include_router(memories.router, prefix="/api/v1/memories", tags=["memories"])
 app.include_router(folders.router, prefix="/api/v1/folders", tags=["folders"])

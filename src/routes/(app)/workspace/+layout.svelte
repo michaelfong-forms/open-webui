@@ -121,6 +121,17 @@
 								{$i18n.t('Tools')}
 							</a>
 						{/if}
+
+						{#if $user?.role === 'admin' || $user?.permissions?.workspace?.datasets}
+							<a
+								class="min-w-fit rounded-full p-1.5 {$page.url.pathname.includes('/workspace/datasets')
+									? ''
+									: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'} transition"
+								href="/workspace/datasets"
+							>
+								{$i18n.t('Datasets')}
+							</a>
+						{/if}
 					</div>
 				</div>
 
